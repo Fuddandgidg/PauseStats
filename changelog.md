@@ -1,4 +1,7 @@
 # Pause Stats
+## v1.3.5
+- update for new geode version
+
 ## v1.3.4 Copy information
 - The option was added to copy the information of each information individually
 - Next Key

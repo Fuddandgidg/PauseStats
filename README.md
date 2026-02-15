@@ -1,4 +1,4 @@
-# <span style="color:#FFD700; font-size:2em">Betterpause</span>
+# <span style="color:#FFD700; font-size:2em">Pause Stats</span>
 
 <img src="logo.png" width="150" alt="the mod's logo" />
 
@@ -12,9 +12,9 @@
 
 ---
 
-## <span style="color:#FFA500; font-size:1.2em">What is Betterpause?</span>
+## <span style="color:#FFA500; font-size:1.2em">What is Pause Stats?</span>
 
-**Betterpause** is a visual mod that transforms the Geometry Dash pause menu, letting you see essential level information in a clear, customizable, and attractive way.  
+**Pause Stats** is a visual mod that transforms the Geometry Dash pause menu, letting you see essential level information in a clear, customizable, and attractive way.  
 Forget boring menus—make your pause more useful and stylish!
 
 ---
