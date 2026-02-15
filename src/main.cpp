@@ -8,6 +8,7 @@
 
 using namespace geode::prelude;
 
+
  
 float getDeltaY() { return Mod::get()->getSettingValue<float>("stats_spacing"); }
 bool isHorizontal() { return Mod::get()->getSettingValue<bool>("stats_horizontal"); }
