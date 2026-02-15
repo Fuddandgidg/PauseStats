@@ -1,15 +1,15 @@
 {
-	"geode": "4.9.0",
+	"geode": "5.0.0-beta.1",
 	"gd": {
-		"win": "2.2074",
+		"win": "2.2081",
 		"android": "2.2074",
 		"mac": "2.2074",
 		"ios": "2.2074"
 	},
 	"id": "jotabelike.pausestats",
 	"name": "Pause Stats",
-	"version": "v1.3.4",
-	"developer": "XJotabelikeX",
+	"version": "v1.3.5",
+	"developer": "XJotaBeLikeX",
 	"description": "Simple and accessible information interface!",
 	"tags": [
 		"interface",
@@ -17,7 +17,7 @@
 		"offline"
 	],
 	"dependencies": {
-		"cvolton.level-id-api": ">=v1.0.1"
+		"cvolton.level-id-api": ">=v2.0.0"
 	},
 	"settings": {
 		"show_attempts": {

@@ -8,13 +8,13 @@
 
 using namespace geode::prelude;
 
-// -------------------- Ajustes / Helpers de UI --------------------
+ 
 float getDeltaY() { return Mod::get()->getSettingValue<float>("stats_spacing"); }
 bool isHorizontal() { return Mod::get()->getSettingValue<bool>("stats_horizontal"); }
 float getStatsX() { return Mod::get()->getSettingValue<float>("stats_x"); }
 float getStatsY() { return Mod::get()->getSettingValue<float>("stats_y"); }
 
-// -------------------- Helpers de normalización --------------------
+ 
 static int clampAndFix(const std::string& key, int defaultIfMissing = 0) {
     int v = Mod::get()->getSavedValue<int>(key, defaultIfMissing);
     if (v < 0) {
@@ -24,7 +24,7 @@ static int clampAndFix(const std::string& key, int defaultIfMissing = 0) {
     return v;
 }
 
-// -------------------- Persistencia de completions ----------------
+ 
 void loadCompletions(const std::string& key, int& completions) {
     completions = clampAndFix(key, 0);
 }
@@ -33,7 +33,7 @@ void saveCompletions(const std::string& key, int completions) {
     Mod::get()->setSavedValue<int>(key, completions);
 }
 
-// -------------------- Conteos --------------------
+ 
 int getObjectCount(GJGameLevel* level, PlayLayer* playLayer) {
     if (playLayer && playLayer->m_objects && playLayer->m_objects->count() > 0)
         return playLayer->m_objects->count();
@@ -41,7 +41,7 @@ int getObjectCount(GJGameLevel* level, PlayLayer* playLayer) {
     return 0;
 }
 
-// Cuenta checkpoints de plataforma (objeto ID 2063)
+ 
 int getPlatformerCheckpointCount(PlayLayer* playLayer) {
     if (!playLayer || !playLayer->m_objects) return 0;
     int count = 0;
@@ -54,17 +54,17 @@ int getPlatformerCheckpointCount(PlayLayer* playLayer) {
     return count;
 }
 
-// ---NUEVO--- Calcula los orbes para la siguiente llave
+ 
 int calculateOrbsToNextKey() {
     return GameStatsManager::sharedState()->getTotalCollectedCurrency() % 500;
 }
 
-// -------------------- Device string usando Geode --------------------
+ 
 std::string getDeviceString() {
     return GEODE_PLATFORM_NAME;
 }
 
-// -------------------- Normalizador de nombre --------------------
+ 
 static std::string normalizeName(const std::string& in) {
     std::string s = in;
     if (s.empty()) s = "noname";
@@ -77,7 +77,7 @@ static std::string normalizeName(const std::string& in) {
     return s;
 }
 
-// Genera hash base para niveles locales (id <= 0)
+ 
 static std::string generateLocalBase(GJGameLevel* level) {
     std::string name = level->m_levelName.empty() ? "noname" : level->m_levelName;
     std::string norm = normalizeName(name);
@@ -87,7 +87,7 @@ static std::string generateLocalBase(GJGameLevel* level) {
     return fmt::format("level_completions_local_{:016x}", (unsigned long long)h);
 }
 
-// Sin variantes: clave estable
+ 
 static std::string computeLevelStatsKey(GJGameLevel* level) {
     if (!level) return "level_completions_invalid";
     int id = level->m_levelID.value();
@@ -96,7 +96,7 @@ static std::string computeLevelStatsKey(GJGameLevel* level) {
     return generateLocalBase(level);
 }
 
-// -------------------- PlayLayer Hook --------------------
+ 
 class $modify(PlayLayerHook, PlayLayer) {
     struct Fields {
         bool completedNormal = false;
@@ -151,7 +151,7 @@ class $modify(PlayLayerHook, PlayLayer) {
     }
 };
 
-// -------------------- PauseLayer Hook --------------------
+ 
 class $modify(PauseLayerHook, PauseLayer) {
     struct Fields {
         std::vector<CCLabelBMFont*> statLabels;
